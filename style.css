@@ -23,6 +23,7 @@ body {
     text-align: left;
     margin: 0;
     font-size: 28px;
+    animation: zagolovok 3s ease 0.5s 1 normal forwards;
 }
 
 .text_hero h2 {
@@ -48,7 +49,14 @@ body {
     font-size: 18px;
     transition: color 0.3s;
     padding: 5px 10px;
+    animation: ssilki 1s ease 1s 1 normal forwards;
+    opacity: 0;
 }
+
+.sal_hero a:nth-child(1) { animation-delay: 1s; }
+.sal_hero a:nth-child(2) { animation-delay: 1.3s; }
+.sal_hero a:nth-child(3) { animation-delay: 1.6s; }
+.sal_hero a:nth-child(4) { animation-delay: 1.9s; }
 
 .sal_hero a:hover {
     color: #ccc;
@@ -62,10 +70,12 @@ body {
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    animation: knopka 4s ease 1s infinite alternate;
 }
 
 .button_hero:hover {
     background-color: #777;
+    animation-play-state: paused;
 }
 
 .hero_images {
@@ -130,6 +140,14 @@ body {
     object-fit: cover;
     border: 5px solid rgb(255, 255, 255);
     border-radius: 10px;
+    animation: kartinki 3s ease 1.5s 1 normal forwards;
+}
+
+.img_right1 img:hover,
+.img_right2 img:hover,
+.img_right3 img:hover,
+.img_right4 img:hover {
+    animation-play-state: paused;
 }
 
 section:nth-child(3) > div {
@@ -148,6 +166,11 @@ section:nth-child(3) > div {
     object-fit: cover;
     border: 5px solid rgb(255, 255, 255);
     border-radius: 10px;
+    animation: foto 2s ease 0.8s 1 normal forwards;
+}
+
+.img_bio img:hover {
+    animation-play-state: paused;
 }
 
 .text_bio {
@@ -155,6 +178,7 @@ section:nth-child(3) > div {
     display: flex;
     flex-direction: column;
     padding: 30px; 
+    animation: tekst 2s ease 0.8s 1 normal forwards;
 }
 
 .text_bio h2 {
@@ -170,12 +194,105 @@ section:nth-child(3) > div {
     line-height: 1.4;
     color: white; 
 }
+
 .bio{
     background-color: gray;
 }
+
 .podval{
     background-color: #555;
     padding: 10px;
     text-align:center;
     color: white;
+    animation: podval 5s ease 2s infinite alternate;
+}
+
+@keyframes zagolovok {
+  0% {
+    transform: scale(0.5);
+    color: yellow;
+  }
+  50% {
+    transform: scale(1.2);
+    color: orange;
+  }
+  100% {
+    transform: scale(1);
+    color: white;
+  }
+}
+
+@keyframes knopka {
+  0% {
+    background-color: #888;
+    transform: scale(1);
+  }
+  50% {
+    background-color: #666;
+    transform: scale(1.1);
+  }
+  100% {
+    background-color: #555;
+    transform: scale(1);
+  }
+}
+
+@keyframes kartinki {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  70% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes tekst {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes foto {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes ssilki {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes podval {
+  0% {
+    background-color: #444;
+  }
+  50% {
+    background-color: #666;
+  }
+  100% {
+    background-color: #555;
+  }
 }
